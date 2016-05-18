@@ -16,7 +16,7 @@
     <groupId>org.locationtech.geomesa</groupId>
     <artifactId>geomesa</artifactId>
     <packaging>pom</packaging>
-    <version>1.2.2-SNAPSHOT</version>
+    <version>1.2.3-SNAPSHOT</version>
 
     <modules>
         <module>geomesa-utils</module>
@@ -41,6 +41,7 @@
         <module>geomesa-cassandra</module>
         <module>geomesa-metrics</module>
         <module>docs</module>
+        <module>geomesa-native-api</module>
     </modules>
 
     <properties>
@@ -91,6 +92,7 @@
         <hadoop.version>2.7.2</hadoop.version>
         <hbase.hadoop.version>${hadoop.version}</hbase.hadoop.version>
         <hbase.version>1.2.1</hbase.version>
+        <hbase.guava.version>12.0.1</hbase.guava.version>
         <spark.version>1.6.1</spark.version>
         <kafka.08.version>0.8.2.2</kafka.08.version>
         <kafka.09.version>0.9.0.1</kafka.09.version>
@@ -1630,7 +1632,7 @@
             <dependency>
                 <groupId>commons-collections</groupId>
                 <artifactId>commons-collections</artifactId>
-                <version>3.1</version>
+                <version>3.2.2</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.avro</groupId>

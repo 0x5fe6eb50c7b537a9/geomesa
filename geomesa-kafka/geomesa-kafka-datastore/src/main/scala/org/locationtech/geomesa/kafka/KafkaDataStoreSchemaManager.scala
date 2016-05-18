@@ -15,6 +15,7 @@ import com.typesafe.scalalogging.LazyLogging
 import org.I0Itec.zkclient.exception.ZkNodeExistsException
 import org.geotools.data.DataStore
 import org.geotools.feature.NameImpl
+import org.locationtech.geomesa.utils.index.GeoMesaSchemaValidator
 import org.locationtech.geomesa.kafka.common.ZkUtils
 import org.locationtech.geomesa.utils.geotools.SimpleFeatureTypes
 import org.opengis.feature.`type`.Name
@@ -46,7 +47,12 @@ trait KafkaDataStoreSchemaManager extends DataStore with LazyLogging {
       throw new IllegalArgumentException(s"Type $typeName already exists at $zkPath.")
     }
 
-    val data = SimpleFeatureTypes.encodeType(featureType)
+    // inspect and update the simple feature type for various components
+    // do this before anything else so that any modifications will be in place
+    GeoMesaSchemaValidator.validate(featureType)
+
+
+    val data = SimpleFeatureTypes.encodeType(featureType, includeUserData = true)
     createZkNode(schemaPath, data)
 
     // build the topic node

@@ -13,12 +13,15 @@
     <parent>
         <artifactId>geomesa-gs-plugin</artifactId>
         <groupId>org.locationtech.geomesa</groupId>
-        <version>1.2.0-SNAPSHOT</version>
+        <version>1.2.3-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>geomesa-hbase-gs-plugin</artifactId>
     <name>GeoMesa HBase GeoServer Plugin</name>
+
+    <!-- Because geoserver includes guava 17, and hbase requires guava 12, we have to create a shaded jar
+         and include that in our assembly instead of individual jars -->
 
     <dependencies>
         <dependency>
@@ -129,7 +132,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>${maven.assembly.plugin.version}</version>
                 <configuration>
                     <descriptor>${project.basedir}/assembly.xml</descriptor>
                 </configuration>
