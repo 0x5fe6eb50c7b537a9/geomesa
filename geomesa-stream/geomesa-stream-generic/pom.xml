@@ -28,6 +28,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.camel</groupId>
@@ -45,7 +46,8 @@
         </dependency>
         <dependency>
             <groupId>org.specs2</groupId>
-            <artifactId>specs2_2.11</artifactId>
+            <artifactId>specs2_${scala.version.major}</artifactId>
+            <version>${specs2.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>

@@ -22,7 +22,7 @@ import org.scalatra.json.NativeJsonSupport
 import scala.collection.JavaConversions._
 import scala.util.Try
 
-class StatsEndpoint(val persistence: FilePersistence) extends GeoMesaDataStoreServlet with NativeJsonSupport {
+abstract class StatsEndpoint(val persistence: FilePersistence) extends GeoMesaDataStoreServlet with NativeJsonSupport {
 
   override def root: String = "stats"
 

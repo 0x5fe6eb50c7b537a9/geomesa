@@ -10,11 +10,6 @@
     <artifactId>geomesa-hbase-datastore</artifactId>
     <name>GeoMesa HBase DataStore</name>
 
-    <properties>
-        <hbase.version>1.0.0</hbase.version>
-        <hbase.hadoop.version>2.5.1</hbase.hadoop.version>
-    </properties>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -38,7 +33,7 @@
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>12.0</version>
+                <version>${guava.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -81,7 +76,8 @@
         </dependency>
         <dependency>
             <groupId>org.specs2</groupId>
-            <artifactId>specs2_2.11</artifactId>
+            <artifactId>specs2_${scala.version.major}</artifactId>
+            <version>${specs2.version}</version>
         </dependency>
     </dependencies>
 

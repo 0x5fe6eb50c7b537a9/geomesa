@@ -26,7 +26,7 @@ import scala.xml.Elem
 /**
  * Rest endpoint to access geomesa analytics
  */
-class AnalyticEndpoint(val persistence: FilePersistence) extends GeoMesaDataStoreServlet with NativeJsonSupport {
+abstract class AnalyticEndpoint(val persistence: FilePersistence) extends GeoMesaDataStoreServlet with NativeJsonSupport {
 
   import AnalyticEndpoint._
   override protected implicit def jsonFormats: Formats = DefaultFormats
