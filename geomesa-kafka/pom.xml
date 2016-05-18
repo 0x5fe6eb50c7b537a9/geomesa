@@ -18,10 +18,6 @@
         <module>geomesa-kafka-utils-common</module>
     </modules>
 
-    <properties>
-        <commons-lang3.version>3.3.2</commons-lang3.version>
-    </properties>
-
     <dependencyManagement>
         <dependencies>
             <dependency>

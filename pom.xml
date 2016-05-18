@@ -68,6 +68,9 @@
         <json4s.version>3.3.0</json4s.version>
         <junit.version>4.12</junit.version>
         <specs2.version>2.3.13</specs2.version>
+        <bigtable.version>0.3.0</bigtable.version>
+        <commons-lang3.version>3.3.2</commons-lang3.version>
+        <gson.version>2.6.2</gson.version>
         <scala.maven.plugin.version>3.2.2</scala.maven.plugin.version>
         <license.maven.plugin.version>2.11</license.maven.plugin.version>
         <git.commit.id.plugin.version>2.2.1</git.commit.id.plugin.version>
@@ -91,12 +94,16 @@
         <thrift.version>0.9.2</thrift.version>
         <hadoop.version>2.7.2</hadoop.version>
         <hbase.hadoop.version>${hadoop.version}</hbase.hadoop.version>
+        <bigtable.hadoop.version>${hadoop.version}</bigtable.hadoop.version>
         <hbase.version>1.2.1</hbase.version>
-        <hbase.guava.version>12.0.1</hbase.guava.version>
+        <hbase.guava.version>${guava.version}</hbase.guava.version>
         <spark.version>1.6.1</spark.version>
         <kafka.08.version>0.8.2.2</kafka.08.version>
         <kafka.09.version>0.9.0.1</kafka.09.version>
         <kafka.version>${kafka.08.version}</kafka.version>
+
+        <!-- The ALPN versions dictates a specific java version -->
+        <alpn.version>8.1.8.v20160420</alpn.version>
 
         <!-- logging properties - expect provided - 1.7.x is for hadoop 2 and accumulo 1.5.x -->
         <slf4j.version>1.7.21</slf4j.version>
@@ -1584,7 +1591,7 @@
             <dependency>
                 <groupId>com.google.code.gson</groupId>
                 <artifactId>gson</artifactId>
-                <version>2.3.1</version>
+                <version>${gson.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.geotools</groupId>

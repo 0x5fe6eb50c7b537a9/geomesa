@@ -20,13 +20,6 @@
     <artifactId>geomesa-bigtable-datastore</artifactId>
     <name>GeoMesa Bigtable DataStore</name>
 
-    <properties>
-        <!-- The ALPN versions dictates a specific java version -->
-        <alpn.version>8.1.8.v20160420</alpn.version>
-        <bigtable.version>0.3.0</bigtable.version>
-        <bigtable.hadoop.version>2.7.2</bigtable.hadoop.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.locationtech.geomesa</groupId>
