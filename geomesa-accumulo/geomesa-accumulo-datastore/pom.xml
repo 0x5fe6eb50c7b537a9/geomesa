@@ -129,7 +129,7 @@
         </dependency>
         <dependency>
             <groupId>com.typesafe.scala-logging</groupId>
-            <artifactId>scala-logging_2.11</artifactId>
+            <artifactId>scala-logging_${scala.version.major}</artifactId>
         </dependency>
         <dependency>
             <!-- 'works with' due to license issues -->
@@ -148,7 +148,8 @@
         </dependency>
         <dependency>
             <groupId>org.specs2</groupId>
-            <artifactId>specs2_2.11</artifactId>
+            <artifactId>specs2_${scala.version.major}</artifactId>
+            <version>${specs2.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -161,6 +162,7 @@
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
+                <version>${scala.maven.plugin.version}</version>
                 <executions>
                     <execution>
                         <id>default-cli</id>
@@ -182,6 +184,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven.jar.plugin.version}</version>
                 <executions>
                     <execution>
                         <goals>

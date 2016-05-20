@@ -18,14 +18,14 @@
     <name>GeoMesa Kafka 08 Utils</name>
 
     <properties>
-        <kafka.08.version>0.8.2.1</kafka.08.version>
+        <kafka.08.version>0.8.2.2</kafka.08.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.apache.kafka</groupId>
-                <artifactId>kafka_2.11</artifactId>
+                <artifactId>kafka_${scala.version.major}</artifactId>
                 <version>${kafka.08.version}</version>
                 <scope>provided</scope>
                 <exclusions>
@@ -49,11 +49,11 @@
         </dependency>
         <dependency>
             <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka_2.11</artifactId>
+            <artifactId>kafka_${scala.version.major}</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka_2.11</artifactId>
+            <artifactId>kafka_${scala.version.major}</artifactId>
             <version>${kafka.08.version}</version>
             <classifier>test</classifier>
             <scope>test</scope>
@@ -85,6 +85,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven.jar.plugin.version}</version>
                 <executions>
                     <execution>
                         <goals>

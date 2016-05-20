@@ -17,15 +17,11 @@
     <artifactId>geomesa-kafka-09-datastore</artifactId>
     <name>GeoMesa Kafka 09 Data Store</name>
 
-    <properties>
-        <kafka.09.version>0.9.0.1</kafka.09.version>
-    </properties>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.apache.kafka</groupId>
-                <artifactId>kafka_2.11</artifactId>
+                <artifactId>kafka_${scala.version.major}</artifactId>
                 <version>${kafka.09.version}</version>
                 <scope>provided</scope>
                 <exclusions>
@@ -63,11 +59,12 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>18.0</version>
+            <version>${guava.version}</version>
         </dependency>
         <dependency>
             <groupId>org.locationtech.geomesa</groupId>
@@ -98,7 +95,7 @@
         </dependency>
         <dependency>
             <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka_2.11</artifactId>
+            <artifactId>kafka_${scala.version.major}</artifactId>
         </dependency>
         <dependency>
             <groupId>com.beust</groupId>
@@ -106,11 +103,12 @@
         </dependency>
         <dependency>
             <groupId>org.specs2</groupId>
-            <artifactId>specs2_2.11</artifactId>
+            <artifactId>specs2_${scala.version.major}</artifactId>
+            <version>${specs2.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka_2.11</artifactId>
+            <artifactId>kafka_${scala.version.major}</artifactId>
             <version>${kafka.09.version}</version>
             <classifier>test</classifier>
             <scope>test</scope>

@@ -62,8 +62,7 @@ class AccumuloBlobStoreTest extends Specification {
       val (storeId, file) = ingestFile(testfile1, "POINT(0 0)")
 
       val ret = bstore.get(storeId)
-
-      val inputStream = ByteStreams.toByteArray(Files.newInputStreamSupplier(file))
+      val inputStream = Files.toByteArray(file)
 
       ret.getKey mustEqual testfile1
       inputStream mustEqual ret.getValue

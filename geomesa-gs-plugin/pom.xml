@@ -174,7 +174,7 @@
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>17.0</version>
+                <version>${guava.version}</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -222,6 +222,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
+                    <version>${maven.assembly.plugin.version}</version>
                     <configuration>
                         <descriptor>${project.basedir}/../assembly.xml</descriptor>
                     </configuration>

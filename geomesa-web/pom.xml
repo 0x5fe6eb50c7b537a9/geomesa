@@ -12,10 +12,6 @@
     <artifactId>geomesa-web</artifactId>
     <packaging>pom</packaging>
 
-    <properties>
-        <scalatra.version>2.3.0</scalatra.version>
-    </properties>
-
     <modules>
         <module>geomesa-web-core</module>
         <module>geomesa-web-data</module>
@@ -160,7 +156,7 @@
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>17.0</version>
+                <version>${guava.version}</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -189,7 +185,7 @@
             </dependency>
             <dependency>
                 <groupId>org.scalatra</groupId>
-                <artifactId>scalatra_2.11</artifactId>
+                <artifactId>scalatra_${scala.version.major}</artifactId>
                 <version>${scalatra.version}</version>
             </dependency>
             <dependency>
@@ -200,7 +196,7 @@
             </dependency>
             <dependency>
                 <groupId>org.scalatra</groupId>
-                <artifactId>scalatra-auth_2.11</artifactId>
+                <artifactId>scalatra-auth_${scala.version.major}</artifactId>
                 <version>${scalatra.version}</version>
             </dependency>
             <dependency>
@@ -236,6 +232,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
+                    <version>${maven.assembly.plugin.version}</version>
                     <executions>
                         <execution>
                             <id>create-archive</id>
